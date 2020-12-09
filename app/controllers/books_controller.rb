@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   def index
       @book = Book.new
-      @books = Book.all
+      @books = Book.all.order(created_at: :desc)
   end
 
   def show
@@ -25,14 +25,14 @@ class BooksController < ApplicationController
   def update
     book = Book.find(params[:id])
     book.update(book_params)
-     flash[:notice]='Book was successfully updated.'
+    flash[:notice]='Book was successfully updated.'
     redirect_to book_path
   end
 
   def destroy
     book = Book.find(params[:id])
     book.destroy
-     flash[:notice]='Book was successfully destroyed.'
+    flash[:notice]='Book was successfully destroyed.'
     redirect_to books_path
   end
 
