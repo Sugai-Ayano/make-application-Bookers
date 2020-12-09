@@ -1,7 +1,9 @@
  <p id="notice"></p>
+<div class="notifications">
+ <div class="notice"><%= flash[:notice] %></div>
+</div>
 
-<p>
-  <%= @book.title %>
-</p>
+Title: <td><%= @book.title %></td>
+Body: <td><%= @book.body %></td>
 <%= link_to "edit", edit_book_path(@book) %>
-<%= link_to "delete", book_path(@book), method: :delete %>
+<%= link_to "back", books_path %>

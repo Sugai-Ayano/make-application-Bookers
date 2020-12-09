@@ -1,7 +1,5 @@
-    <p id="notice"></p>
-
+ <div class="notice"><%= flash[:notice] %></div>
 <h1>Books</h1>
-
 <table>
   <thead>
     <tr>
@@ -11,23 +9,27 @@
     </tr>
   </thead>
 
-  <% @books.each do |book| %>
-   <%= book.title %>
-   <%= book.body %>
-   <%= link_to "show", book_path(book) %>
-   <%= link_to "edit", edit_book_path(book) %>
-   <%= link_to "destroy", book_path(book), method: :delete %>
-  <% end %>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td> <%= book.title %></td>
+      <td> <%= book.body %></td>
+      <td> <%= link_to "Show", book_path(book) %></td>
+      <td> <%= link_to "Edit", edit_book_path(book) %></td>
+      <td> <%= link_to "Destroy", book_path(book), method: :delete, data: { confirm: 'Are you sure' }%></td>
+    </tr>
+   <% end %>
+  </tbody>
+</table>
 
 <h2>New book</h2>
 <%= form_with model:@book, local:true do |f| %>
-
+ Title
   <div class="field">
-    <label for="book_title">Title</label>
    <%= f.text_field :title %>
   </div>
+    Body
   <div class="field">
-    <label for="book_body">Body</label>
   <%= f.text_area :body %>
   </div>
   <div class="actions">
