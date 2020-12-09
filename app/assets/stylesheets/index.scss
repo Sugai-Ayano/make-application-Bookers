@@ -11,7 +11,7 @@ p, ol, ul, td {
     margin: 33px;
 }
 
-.p {
+p {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -29,7 +29,7 @@ body {
     display: block;
 }
 
-.h1 {
+h1 {
     display: block;
     font-size: 2em;
     margin-block-start: 0.67em;
@@ -47,19 +47,19 @@ table {
     border-color: grey;
 }
 
-.thead {
+thead {
     display: table-header-group;
     vertical-align: middle;
     border-color: inherit;
 }
 
-.tr {
+tr {
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
 }
 
-.th {
+th {
     display: table-cell;
     vertical-align: inherit;
     font-weight: bold;
@@ -67,13 +67,13 @@ table {
     padding-bottom: 5px;
 }
 
-.tbody {
+tbody {
     display: table-row-group;
     vertical-align: middle;
     border-color: inherit;
 }
 
-.h2 {
+h2 {
     display: block;
     font-size: 1.5em;
     margin-block-start: 0.83em;
@@ -90,4 +90,16 @@ form {
 
 .notice {
     color: green;
+}
+
+td {
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.field, actions{
+    margin-bottom: 10px;
 }
