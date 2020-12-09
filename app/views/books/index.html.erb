@@ -24,6 +24,12 @@
 
 <h2>New book</h2>
 <%= form_with model:@book, local:true do |f| %>
+<% if @book.errors.any? %>
+<%= @book.errors.count %>件のエラー
+<% @book.errors.full_messages.each do |message| %>
+<%= message %>
+ <% end %>
+<% end %>
  Title
   <div class="field">
    <%= f.text_field :title %>
@@ -36,3 +42,4 @@
     <%= f.submit 'Create Book' %>
   </div>
 <% end %>
+
